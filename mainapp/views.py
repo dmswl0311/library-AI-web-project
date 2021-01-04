@@ -3,7 +3,11 @@ from django.db.models import Q
 from .models import LibraryList
 
 def index(request):
-    return render(request,'index.html')
+    library_list = LibraryList.objects.all()
+    context={
+        'library_list':library_list,
+    }
+    return render(request,'index.html',context)
 
 def search_result(request):
     queryset=LibraryList.objects.all()
