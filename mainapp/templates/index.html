@@ -5,44 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미대출 도서 추천</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>미대출 도서 추천 프로젝트 main</h1>
+    <h1>
+        <center style="margin-top: 2rem;">미대출 도서 추천</center>
+    </h1>
 
     <!-- 성,연령별 -->
-    <form action="{%url 'search_result'%}" method="GET">
-        여자<input type="checkbox" name='gender[]' id='F' value='F'>
-        남자<input type="checkbox" name='gender[]' id='M' value='M'>
-        <br><br>
-        10대이하<input type="checkbox" name='age[]' id='10' value='10'>
-        20대<input type="checkbox" name='age[]' id='20' value='20'>
-        30대<input type="checkbox" name='age[]' id='30' value='30'>
-        40대<input type="checkbox" name='age[]' id='40' value='40'>
-        50대<input type="checkbox" name='age[]' id='50' value='50'>
-        60대이상<input type="checkbox" name='age[]' id='60' value='60'>
-        <div class="Container">
-            <font size=5 id="slider_value_view">2015</font>년
-            <br>
-            1970년<input style="width:80%;" class="slider_range" name="year" type="range" value="2015" min="1970"
-                max="2020"></input>2020년
-        </div>
-        <input type="submit" value="검색">
-    </form>
-    <!-- <form action="{%url 'search_result'%}" method="GET">
-        출판연도 1970년<input type="range" value="0" min="1970" max="2020">2020년
-    </form> -->
-
-    <!-- 출판연도 슬라이드 -->
-    <!-- <div class="Container">
+    <div class="Container">
         <form action="{%url 'search_result'%}" method="GET">
-            <font size=5 id="slider_value_view">2015</font>년
+            여자<input type="checkbox" name='gender[]' id='F' value='F'>
+            남자<input type="checkbox" name='gender[]' id='M' value='M'>
+            <br><br>
+            10대이하<input type="checkbox" name='age[]' id='10' value='10'>
+            20대<input type="checkbox" name='age[]' id='20' value='20'>
+            30대<input type="checkbox" name='age[]' id='30' value='30'>
+            40대<input type="checkbox" name='age[]' id='40' value='40'>
+            50대<input type="checkbox" name='age[]' id='50' value='50'>
+            60대이상<input type="checkbox" name='age[]' id='60' value='60'>
             <br>
+            <hr>
+            <font size=5 id="slider_value_view">2015</font>년
             1970년<input style="width:80%;" class="slider_range" name="year" type="range" value="2015" min="1970"
                 max="2020"></input>2020년
-            <input type="submit" value="출판연도별 검색">
+            <input type="submit" value="검색">
         </form>
-    </div> -->
+    </div>
 
     <script language="javascript">
 
@@ -62,22 +58,42 @@
         RangeSlider();
     </script>
 
-    {%for i in library_list%}
-    <!-- <table border="0.5" width="500" height="300">
-    <th>책 제목</th>
-    <th>이미지</th>
-    <tr>
-        <td>{{i.book_name}}</td>
-        <td><img src='{{i.url}}' width="200px"></td>
-    </tr>
-</table> -->
+    <!-- {%for i in library_list%}
     <br>
     {{i.category_name}}
     <ul>
         <li>{{i.book_name}}</li>
         <li><img src='{{i.url}}' width="200px"></li>
     </ul>
+    {%endfor%} -->
+
+    {%for i in library_list%}
+    <div class="card" style="width: 18rem;">
+        <img src='{{i.url}}' width="200px" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{i.book_name}}</h5>
+            <p class="card-text">{{i.explain}}</p>
+            <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                class="btn btn-primary">두류도서관 검색</a>
+            <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                class="btn btn-primary">구글 검색</a>
+        </div>
+    </div>
+    </div>
     {%endfor%}
+
+    <!-- {%for i in library_list%}
+    <div class="column1">
+        <div class="box"> <a href="#"><img src='{{i.url}}' width="200px" alt="" class="image image-full" /></a>
+            <h3>{{i.book_name}}</h3>
+            <p>{{i.category_name}}</p>
+            <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                class="button button-small" target="_blank">두류도서관 검색</a>
+            <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                class="button button-small" target="_blank">구글 검색</a>
+        </div>
+    </div>
+    {%endfor%} -->
 </body>
 
 </html>
