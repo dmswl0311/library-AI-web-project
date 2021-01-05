@@ -11,10 +11,18 @@ def index(request):
 
 def search_result(request):
     queryset=LibraryList.objects.all()
-    gender = request.GET['gender']
-    age = request.GET['age']
+    gender = request.GET.getlist('gender[]')
+    age = request.GET.getlist('age[]')
     year=request.GET['year']
-    result = queryset.filter(Q(gender__icontains=gender)&Q(age__icontains=age)&Q(year__icontains=year))
+    query=Q()
+    for i in gender:
+        query=query|Q(gender__icontains=i)
+        queryset=queryset.filter(query)
+    for i in age:
+        query=query|Q(age__icontains=i)
+        queryset=queryset.filter(query)
+    
+    result = queryset.filter(query&Q(year__icontains=year))
     context={
         'library_list':result,
     }
