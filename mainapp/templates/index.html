@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>미대출 도서 추천</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
     <h1>미대출 도서 추천 프로젝트 main</h1>
 
+    <!-- 성,연령별 -->
     <form action="{%url 'search_result'%}" method="GET">
         여자<input type="checkbox" name='gender' id='F' value='F'>
         남자<input type="checkbox" name='gender' id='M' value='M'>
@@ -19,8 +21,47 @@
         40대<input type="checkbox" name='age' id='40' value='40'>
         50대<input type="checkbox" name='age' id='50' value='50'>
         60대이상<input type="checkbox" name='age' id='60' value='60'>
+        <div class="Container">
+            <font size=5 id="slider_value_view">2015</font>년
+            <br>
+            1970년<input style="width:80%;" class="slider_range" name="year" type="range" value="2015" min="1970"
+                max="2020"></input>2020년
+        </div>
         <input type="submit" value="검색">
     </form>
+    <!-- <form action="{%url 'search_result'%}" method="GET">
+        출판연도 1970년<input type="range" value="0" min="1970" max="2020">2020년
+    </form> -->
+
+    <!-- 출판연도 슬라이드 -->
+    <!-- <div class="Container">
+        <form action="{%url 'search_result'%}" method="GET">
+            <font size=5 id="slider_value_view">2015</font>년
+            <br>
+            1970년<input style="width:80%;" class="slider_range" name="year" type="range" value="2015" min="1970"
+                max="2020"></input>2020년
+            <input type="submit" value="출판연도별 검색">
+        </form>
+    </div> -->
+
+    <script language="javascript">
+
+        function ShowSliderValue(sVal) {
+            var obValueView = document.getElementById("slider_value_view");
+            obValueView.innerHTML = sVal
+        }
+
+        var RangeSlider = function () {
+            var range = $('.slider_range');
+
+            range.on('input', function () {
+                ShowSliderValue(this.value);
+            });
+        };
+
+        RangeSlider();
+    </script>
+
     {%for i in library_list%}
     <!-- <table border="0.5" width="500" height="300">
     <th>책 제목</th>

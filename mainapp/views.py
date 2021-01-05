@@ -13,7 +13,8 @@ def search_result(request):
     queryset=LibraryList.objects.all()
     gender = request.GET['gender']
     age = request.GET['age']
-    result = queryset.filter(Q(gender__icontains=gender)&Q(age__icontains=age))
+    year=request.GET['year']
+    result = queryset.filter(Q(gender__icontains=gender)&Q(age__icontains=age)&Q(year__icontains=year))
     context={
         'library_list':result,
     }
