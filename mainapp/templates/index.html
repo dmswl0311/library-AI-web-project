@@ -33,9 +33,9 @@
             60대이상<input type="checkbox" name='age[]' id='60' value='60'>
             <br>
             <hr>
-            <font size=5 id="slider_value_view">2015</font>년
-            1970년<input style="width:80%;" class="slider_range" name="year" type="range" value="2015" min="1970"
-                max="2020"></input>2020년
+            <font size=5 id="slider_value_view">2009</font>년
+            2009년<input style="width:80%;" class="slider_range" name="year" type="range" value="2009" min="2009"
+                max="2019"></input>2019년
             <input type="submit" value="검색">
         </form>
     </div>
@@ -67,20 +67,27 @@
     </ul>
     {%endfor%} -->
 
-    {%for i in library_list%}
-    <div class="card" style="width: 18rem;">
-        <img src='{{i.url}}' width="200px" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{i.book_name}}</h5>
-            <p class="card-text">{{i.explain}}</p>
-            <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
-                class="btn btn-primary">두류도서관 검색</a>
-            <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
-                class="btn btn-primary">구글 검색</a>
+    <div class="mt-5 mb-5" id="list">
+        <div class="row">
+            {%for i in library_list%}
+            <div class="col-sm-12 col-md-4 mb-5">
+                <div class="card" style="width: 18rem; display: flex;"">
+                    <img src='{{i.url}}' class=" card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.book_name}}</h5>
+                        <p class="card-text">{{i.explain}}</p>
+                        <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                            class="btn btn-primary">두류도서관 검색</a>
+                        <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                            class="btn btn-primary">구글 검색</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
         </div>
     </div>
-    </div>
-    {%endfor%}
+
+
 
     <!-- {%for i in library_list%}
     <div class="column1">
