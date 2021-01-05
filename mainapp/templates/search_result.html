@@ -1,21 +1,32 @@
-<h1>미대출 도서 추천</h1>
+<html lang="ko">
 
-<form action="{%url 'search_result'%}" method="GET">
-    여자<input type="checkbox" name='gender' id='F' value='F'>
-    남자<input type="checkbox" name='gender' id='M' value='M'>
-    <br><br>
-    10대이하<input type="checkbox" name='age' id='10' value='10'>
-    20대<input type="checkbox" name='age' id='20' value='20'>
-    30대<input type="checkbox" name='age' id='30' value='30'>
-    40대<input type="checkbox" name='age' id='40' value='40'>
-    50대<input type="checkbox" name='age' id='50' value='50'>
-    60대이상<input type="checkbox" name='age' id='60' value='60'>
-    <input type="submit" value="검색">
-</form>
-{%for i in library_list%}
-{{i.category_name}}
-<ul>
-    <li>{{i.book_name}}</li>
-    <li><img src='{{i.url}}' width="200px"></li>
-</ul>
-{%endfor%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>미대출 도서 추천</h1>
+    <form action="{%url 'search_result'%}" method="GET">
+        여자<input type="checkbox" name='gender' id='F' value='F'>
+        남자<input type="checkbox" name='gender' id='M' value='M'>
+        <br><br>
+        10대이하<input type="checkbox" name='age' id='10' value='10'>
+        20대<input type="checkbox" name='age' id='20' value='20'>
+        30대<input type="checkbox" name='age' id='30' value='30'>
+        40대<input type="checkbox" name='age' id='40' value='40'>
+        50대<input type="checkbox" name='age' id='50' value='50'>
+        60대이상<input type="checkbox" name='age' id='60' value='60'>
+        <input type="submit" value="검색">
+    </form>
+    {%for i in library_list%}
+    {{i.category_name}}
+    <ul>
+        <li>{{i.book_name}}</li>
+        <li><img src='{{i.url}}' width="200px"></li>
+    </ul>
+    {%endfor%}
+</body>
+
+</html>
