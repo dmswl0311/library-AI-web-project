@@ -22,13 +22,9 @@ def search_result(request):
     for i in age:
         query=query|Q(age__icontains=i)
         queryset=queryset.filter(query)
-    if (int(year)-2009==0):
-        result = queryset.filter(query&Q(year__icontains=year))
-    else:
-        for i in range(int(year)-2009):
-            query=query|Q(year__icontains=str(2009+i))
-            queryset=queryset.filter(query)
-        result = queryset
+        
+    result=queryset.filter(year__range=(2009,int(year)))
+
     context={
         'library_list':result,
     }
