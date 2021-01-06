@@ -26,6 +26,11 @@
             display: none;
             margin-left: 20px;
         }
+
+        .subM {
+            display: none;
+            margin-left: 20px;
+        }
     </STYLE>
     <SCRIPT>
         function toggleShow(checkbox) {
@@ -56,6 +61,20 @@
                     sub.style.display = 'none';
             }
         }
+        function toggleShow3(checkbox) {
+            var id = 'subM' + checkbox.id;
+            var subM =
+                document.all ? document.all[id] :
+                    document.getElementById ? document.getElementById(id) :
+                        null;
+            if (subM) {
+                if (subM.style.display == '' ||
+                    subM.style.display == 'none')
+                    subM.style.display = 'block';
+                else
+                    subM.style.display = 'none';
+            }
+        }
     </SCRIPT>
 </head>
 
@@ -64,104 +83,142 @@
         <center style="margin-top: 2rem;">미대출 도서 추천</center>
     </h1>
 
+    <div class="container" style="margin-right: 1rem; margin-left: 1rem;">
 
+        <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
+            <!--대분류1-->
+            <label for="0">여자</label><INPUT TYPE="checkbox" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
+            <!--하위 분류1-->
+            <DIV ID="subCats0" CLASS="subCats">
+                <!--하위 분류2-->
+                <label for="10">10대 이하</label><INPUT TYPE="checkbox" NAME="age[]" ONCLICK="toggleShow2(this)" value='10'
+                    id='10'>
+                <div id="sub10" Class="sub">
+                    <label for="101">과학</label><INPUT TYPE="checkbox" NAME="category_name[]" value="과학" id="101">
+                    <label for="102">만화/오락</label><INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락" id="102">
+                    <label for="103">청소년교육</label><INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육" id="103">
+                </div>
+                <br>
+                <label for="20">20대</label><INPUT TYPE="checkbox" NAME="age[]" id='20' value='20'
+                    ONCLICK="toggleShow2(this)">
+                <div id="sub20" Class="sub">
+                    <label for="201">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행' id='201'>
+                    <label for="202">소설</label><INPUT TYPE="checkbox" NAME="category_name[]" value='소설' id='202'>
+                    <label for="203">자기계발/창업</label><INPUT TYPE="checkbox" NAME="category_name[]" value='자기계발/창업'
+                        id='203'>
+                </div>
+                <br>
+                <label for="30">30대</label><INPUT TYPE="checkbox" NAME="age[]" id='30' value='30'
+                    ONCLICK="toggleShow2(this)">
+                <div id="sub30" Class="sub">
+                    <label for="301">만화/오락</label><INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락" id="301">
+                    <label for="302">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행' id='302'>
+                    <label for="303">청소년교육</label><INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육" id='303'>
+                </div>
+                <br>
+                <label for="40">40대</label><INPUT TYPE="checkbox" NAME="age[]" id='40' value='40'
+                    ONCLICK="toggleShow2(this)">
+                <div id="sub40" Class="sub">
+                    <label for="401">만화/오락</label><INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락" id="401">
+                    <label for="402">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행' id='402'>
+                    <label for="403">청소년교육</label><INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육" id='403'>
+                </div>
+                <br>
+                <label for="50">50대</label><INPUT TYPE="checkbox" NAME="age[]" id='50' value='50'
+                    ONCLICK="toggleShow2(this)">
+                <div id="sub50" Class="sub">
+                    <label for="501">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행' id='501'>
+                    <label for="502">소설</label><INPUT TYPE="checkbox" NAME="category_name[]" value='소설' id='502'>
+                    <label for="503">자기계발/창업</label><INPUT TYPE="checkbox" NAME="category_name[]" value='자기계발/창업'
+                        id='503'>
+                </div>
+                <br>
+                <label for="60">60대 이상</label><INPUT TYPE="checkbox" NAME="age[]" id='60' value='60'
+                    ONCLICK="toggleShow2(this)">
+                <div id="sub60" Class="sub">
+                    <label for="601">만화/오락</label><INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락" id='601'>
+                    <label for="602">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행' id='602'>
+                    <label for="603">청소년교육</label><INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육" id='603'>
+                </div>
+            </DIV>
+            <BR>
+            <!--대분류2-->
+            <label for="M">남자</label><INPUT TYPE="checkbox" id='1' NAME="gender" ONCLICK="toggleShow(this)" value='M'>
+            <BR>
+            <!--하위 분류2-->
+            <DIV ID="subCats1" CLASS="subCats">
+                <INPUT TYPE="checkbox" NAME="age" id='10' ONCLICK="toggleShow3(this)" value='10'>
+                10대 이하
+                <!--하위 분류-->
+                <div id="subM10" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
+                    1.청소년교육
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
+                    2.만화/오락
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="과학">
+                    3.과학
+                </div>
+                <br>
+                <INPUT TYPE="checkbox" NAME="age" id='20' ONCLICK="toggleShow3(this)" value='20'>
+                20대
+                <div id="subM20" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업">
+                    1.자기계발/창업
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행">
+                    2.문학/여행
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT">
+                    3.취미/생활/IT
+                </div><br>
+                <INPUT TYPE="checkbox" NAME="age" id='30' ONCLICK="toggleShow3(this)" value='30'>
+                30대
+                <div id="subM30" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업">
+                    1.자기계발/창업
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행">
+                    2.문학/여행
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT">
+                    3.취미/생활/IT
+                </div><br>
+                <INPUT TYPE="checkbox" NAME="age" id='40' ONCLICK="toggleShow3(this)" value='40'>
+                40대
+                <div id="subM40" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업">
+                    1.자기계발/창업
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
+                    2.청소년교육
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
+                    3.만화/오락
+                </div><br>
+                <INPUT TYPE="checkbox" NAME="age" id='50' ONCLICK="toggleShow3(this)" value='50'>
+                50대
+                <div id="subM50" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행">
+                    1.문학/여행
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업">
+                    2.자기계발/창업
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT">
+                    3.취미/생활/IT
+                </div><br>
+                <INPUT TYPE="checkbox" NAME="age" id='60' ONCLICK="toggleShow3(this)" value='60'>
+                60대 이상
+                <div id="subM60" Class="subM">
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행">
+                    1.문학/여행
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="세계사/역사">
+                    2.세계사/역사
+                    <INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업">
+                    3.자기계발/창업
+                </div>
+            </DIV>
+            <br>
+            <hr>
+            <font size=5 id="slider_value_view">2009</font>년
+            2009년<input style="width:80%;" class="slider_range" name="year" type="range" value="2009" min="2009"
+                max="2019"></input>2019년
+            <input type="submit" value="검색" id="search_button">
+        </FORM>
 
-    <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
-        <!--대분류1-->
-        <label for="F">여자</label><INPUT TYPE="checkbox" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
-
-        <!--하위 분류1-->
-        <DIV ID="subCats0" CLASS="subCats">
-
-            <INPUT TYPE="checkbox" NAME="age" ONCLICK="toggleShow2(this)" value='10' id='10'>
-            10대 이하
-            <div id="sub10" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="과학">
-                1.과학
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
-                2.만화/오락
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
-                3.청소년교육
-            </div>
-            <INPUT TYPE="checkbox" NAME="age" id='20' value='20' ONCLICK="toggleShow2(this)">
-            20대
-            <div id="sub20" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행'>
-                1.문학/여행
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='소설'>
-                2.소설
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='자기계발/창업'>
-                3.자기계발/창업
-            </div>
-            <INPUT TYPE="checkbox" NAME="age" id='30' value='30' ONCLICK="toggleShow2(this)">
-            30대
-            <div id="sub30" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
-                1.만화/오락
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행'>
-                2.문학/여행
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
-                3.청소년교육
-            </div>
-            <INPUT TYPE="checkbox" NAME="age" id='40' value='40' ONCLICK="toggleShow2(this)">
-            40대
-            <div id="sub40" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
-                1.만화/오락
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행'>
-                2.문학/여행
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
-                3.청소년교육
-            </div>
-            <INPUT TYPE="checkbox" NAME="age" id='50' value='50' ONCLICK="toggleShow2(this)">
-            50대
-            <div id="sub50" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행'>
-                1.문학/여행
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='소설'>
-                2.소설
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='자기계발/창업'>
-                3.자기계발/창업
-            </div>
-            <INPUT TYPE="checkbox" NAME="age" id='60' value='60' ONCLICK="toggleShow2(this)">
-            60대 이상
-            <div id="sub60" Class="sub">
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락">
-                1.만화/오락
-                <INPUT TYPE="checkbox" NAME="category_name[]" value='문학/여행'>
-                2.문학/여행
-                <INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육">
-                3.청소년교육
-            </div>
-        </DIV>
-        <BR>
-        <!--대분류2-->
-        <label for="M">남자</label><INPUT TYPE="checkbox" NAME="gender" ONCLICK="toggleShow(this)" id='1' value='M'>
-        <BR>
-
-        <!--하위 분류2-->
-        <DIV ID="subCats1" CLASS="subCats">
-            <INPUT TYPE="checkbox" NAME="10">
-            10대 이하
-            <INPUT TYPE="checkbox" NAME="20">
-            20대
-            <INPUT TYPE="checkbox" NAME="30">
-            30대
-            <INPUT TYPE="checkbox" NAME="40">
-            40대
-            <INPUT TYPE="checkbox" NAME="50">
-            50대
-            <INPUT TYPE="checkbox" NAME="60">
-            60대 이상
-        </DIV>
-        <br>
-        <hr>
-        <font size=5 id="slider_value_view">2009</font>년
-        2009년<input style="width:80%;" class="slider_range" name="year" type="range" value="2009" min="2009"
-            max="2019"></input>2019년
-        <input type="submit" value="검색" id="search_button">
-    </FORM>
-
+    </div>
     <script language="javascript">
 
         function ShowSliderValue(sVal) {
@@ -189,6 +246,9 @@
                         <div class="card" style="width: 18rem;">
                             <img src='{{i.url}}' width='200px' height='400px' class=" card-img-top" alt="...">
                             <div class="card-body">
+                                {{i.category_name}}
+                                {{i.year}}
+                                {{i.rank}}
                                 <h5 class="card-title">{{i.book_name}}</h5>
                                 <p class="card-text">{{i.explain}}</p>
                                 <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"

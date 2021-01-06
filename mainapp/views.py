@@ -34,29 +34,27 @@ def index(request):
 
 def search_result(request):
     queryset=LibraryList.objects.all()
-    # gender = request.GET.getlist('gender[]')
-    # age = request.GET.getlist('age[]')
+    queryset2=LibraryList.objects.all()
+    age = request.GET.getlist('age[]')
     gender=request.GET['gender']
-    age=request.GET['age']
-    print(age)
     category_name=request.GET.getlist('category_name[]')
     year=request.GET['year']
 
     query=Q()
-    # for i in gender:
-    #     query=query|Q(gender__icontains=i)
-    #     queryset=queryset.filter(query)
-    # for i in age:
-    #     query=query|Q(age__icontains=i)
-    #     queryset=queryset.filter(query)
-    for i in category_name:
-        query=query|Q(category_name__icontains=i)
-        queryset=queryset.filter(query)
-    
-    queryset=queryset.filter(Q(gender__icontains=gender)&Q(age__icontains=age))
-    # result=queryset.filter(year__range=(2009,int(year))).values('book_name','explain','url').distinct()
-    result=queryset.filter(year__range=(2009,int(year))).values('book_name','explain','url').distinct()
+    query2=Q()
 
+    for i in age:
+        query=query|Q(age__icontains=i)
+        queryset=queryset.filter(query)
+
+    for i in category_name:
+        query2=query2|Q(category_name__icontains=i)
+        queryset2=queryset2.filter(query2)
+    
+    result=LibraryList.objects.all().filter(query&query2&Q(gender__icontains=gender))
+    result=result.filter(year__range=(2009,int(year))).order_by('rank').distinct()
+
+    # result2=queryset.filter(Q(gender__icontains=gender)).distinct()
     context={
         'library_list':result,
     }
