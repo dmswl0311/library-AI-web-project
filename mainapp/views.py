@@ -38,8 +38,8 @@ def search_result(request):
     age = request.GET.getlist('age[]')
     gender=request.GET['gender']
     category_name=request.GET.getlist('category_name[]')
-    year=request.GET['year']
-
+    year1=request.GET['year1']
+    year2=request.GET['year2']
     query=Q()
     query2=Q()
 
@@ -52,7 +52,7 @@ def search_result(request):
         queryset2=queryset2.filter(query2)
     
     result=LibraryList.objects.all().filter(query&query2&Q(gender__icontains=gender))
-    result=result.filter(year__range=(2009,int(year))).order_by('rank').distinct()
+    result=result.filter(year__range=(int(year1),int(year2))).order_by('rank').distinct()
 
     # result2=queryset.filter(Q(gender__icontains=gender)).distinct()
     context={
