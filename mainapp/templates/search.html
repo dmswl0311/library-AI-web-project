@@ -13,12 +13,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+    <style type="text/css">
+        a {
+            text-decoration: none
+        }
+    </style>
 </head>
 
 <body>
     <div class=container>
         <center>
-            <h2 style="margin-top: 2rem;">제목검색결과</h2>
+            <h2 style="margin-top: 2rem;"><a href="{% url 'index' %}">제목 통합검색결과</a></h2>
             <br>
             <form action="{%url 'search'%}" method="get">
                 <input type="text" name='search'>

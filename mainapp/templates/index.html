@@ -1,5 +1,29 @@
 {% load static %}
 <html lang="ko">
+<style>
+    .to-right-underline {
+        position: relative;
+    }
+
+    .to-right-underline:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 0px;
+        height: 6px;
+        margin: 5px 0 0;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.3s;
+        opacity: 0;
+        background-color: #8fd3f4;
+    }
+
+    .to-right-underline:hover:after {
+        width: 100%;
+        opacity: 1;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -107,7 +131,9 @@
 
 <body>
     <h1>
-        <center style="margin-top: 2rem;">미대출 도서 추천</center>
+        <center style="margin-top: 2rem;">
+            <p><span class="to-right-underline">미대출 도서 추천</span></p>
+        </center>
     </h1>
     <br>
     <div class='container'>
