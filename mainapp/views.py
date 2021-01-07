@@ -7,33 +7,11 @@ from django.core.paginator import Paginator
 
 def index(request):
     queryset=LibraryList.objects.all()
-    paginator = Paginator(queryset,30) 
-    now_page = request.GET.get('page')
-    posts = paginator.get_page(now_page) 
-
     query=Q()
-    # 여성, 10대이하~60대이상까지 인기카테고리 1,2,3위에 있는 첫번째 추천도서 리스트
-    for i in range(1,7):
-        query=query|Q(age__icontains=(i*10))
-        for j in range(1,4):
-            query=query|Q(age__icontains=j)
-            queryset=queryset.filter(query)
-    library_list_f=queryset.filter(Q(gender__icontains='F')&Q(rank__icontains=1))
-
-    queryset=LibraryList.objects.all()
-    query=Q()
-
-    #남성, 10대이하~60대이상까지 인기카테고리 1,2,3위에 있는 첫번째 추천도서 리스트
-    for i in range(1,7):
-        query=query|Q(age__icontains=(i*10))
-        for j in range(1,4):
-            query=query|Q(age__icontains=j)
-            queryset=queryset.filter(query)
-    library_list_m=queryset.filter(Q(gender__icontains='M')&Q(rank__icontains=1))
-
+    
+    result=queryset.filter(Q(rank='1')).order_by('age','gender').distinct()
     context={
-        'library_list_f':library_list_f,
-        'library_list_m':library_list_m,
+        'library_list_f':result,
     }
     return render(request,'index.html',context)
 
@@ -62,11 +40,15 @@ def search_result(request):
     
     result=LibraryList.objects.all().filter(query&query2&Q(gender__icontains=gender))
     result=result.filter(year__range=(int(year1),int(year2))).order_by('rank').distinct()
-    
+    cnt=0
+
+    for _ in result:
+        cnt+=1
+
     if gender=='F':
-        gender='여자'
+        gender='여성'
     elif gender=='M':
-        gender='남자'
+        gender='남성'
     # result2=queryset.filter(Q(gender__icontains=gender)).distinct()
     context={
         'library_list':result,
@@ -75,6 +57,7 @@ def search_result(request):
         'category_list':category_name,
         'year1':year1,
         'year2':year2,
+        'count':cnt,
     }
     return render(request,'search_result.html',context)
 

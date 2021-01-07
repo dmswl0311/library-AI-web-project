@@ -117,7 +117,7 @@
 
             <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
                 <!--대분류1-->
-                <label for="0">여자</label><INPUT TYPE="radio" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
+                <label for="0">여성</label><INPUT TYPE="radio" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
                 <!--하위 분류1-->
                 <DIV ID="subCats0" CLASS="subCats">
                     <!--하위 분류2-->
@@ -181,7 +181,7 @@
                 </DIV>
                 <BR>
                 <!--대분류2-->
-                <label for="1">남자</label><INPUT TYPE="radio" id='1' NAME="gender" ONCLICK="toggleShow(this)" value='M'>
+                <label for="1">남성</label><INPUT TYPE="radio" id='1' NAME="gender" ONCLICK="toggleShow(this)" value='M'>
                 <BR>
                 <!--하위 분류2-->
                 <DIV ID="subCats1" CLASS="subCats">
@@ -269,7 +269,12 @@
                         <div class="card" style="width: 18rem;">
                             <img src='{{i.url}}' width='200px' height='400px' class=" card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{i.book_name}}</h5>
+                                {{i.gender}}
+                                {{i.age}}대 추천도서
+                                <p>
+                                    {{i.category_name}}
+                                    {{i.year}}년
+                                <h5 class="card-title" style="font-weight: bolder;">{{i.book_name}}</h5>
                                 <p class="card-text">{{i.explain}}</p>
                                 <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
                                     class="btn btn-primary">두류도서관 검색</a>

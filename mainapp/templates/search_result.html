@@ -110,27 +110,14 @@
     <br>
     <div class='container'>
         <center>
-            <form action="{%url 'search'%}" method="get">
+            <!-- <form action="{%url 'search'%}" method="get">
                 <input type="text" name='search'>
                 <input type="submit" value='제목검색' class="btn btn-primary">
-            </form>
-
-            <div>
-                검색 조건:
-                {{gender}}
-                {%for r in age_list%}
-                {{r}}대
-                {%endfor%}
-                {%for r in category_list%}
-                {{r}}
-                {%endfor%}
-                {{year1}}년-{{year2}}년
-            </div>
-            <br>
+            </form> -->
 
             <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
                 <!--대분류1-->
-                <label for="0">여자</label><INPUT TYPE="radio" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
+                <label for="0">여성</label><INPUT TYPE="radio" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
                 <!--하위 분류1-->
                 <DIV ID="subCats0" CLASS="subCats">
                     <!--하위 분류2-->
@@ -193,7 +180,7 @@
                     </div>
                 </DIV>
                 <!--대분류2-->
-                <label for="1">남자</label><INPUT TYPE="radio" id='1' NAME="gender" ONCLICK="toggleShow(this)" value='M'>
+                <label for="1">남성</label><INPUT TYPE="radio" id='1' NAME="gender" ONCLICK="toggleShow(this)" value='M'>
                 <BR>
                 <!--하위 분류2-->
                 <DIV ID="subCats1" CLASS="subCats">
@@ -267,13 +254,30 @@
                 <input type="hidden" id="to" name="year2" />
                 <input type="submit" value="검색" id="search_button" class="btn btn-primary">
             </FORM>
-            <br>
             <hr>
         </center>
     </div>
     </div>
+    <div>
+        <br>
+        <div style="font-size: 1.2rem; margin-left: 20%;">
+            검색결과 {{count}}건
+            <br><br>
+            검색 조건:
+            {{gender}}
+            {%for r in age_list%}
+            {{r}}대
+            {%endfor%}
+            {%for r in category_list%}
+            {{r}}
+            {%endfor%}
+            {{year1}}년-{{year2}}년
+        </div>
+
+    </div>
     <div class=container>
         <center>
+            <br>
             <div class="mt-5 mb-5" id="list" style="height:100vh; width:70vw;">
                 <div class=" row">
                     {%for i in library_list%}
@@ -282,9 +286,8 @@
                             <img src='{{i.url}}' width='200px' height='400px' class=" card-img-top" alt="...">
                             <div class="card-body">
                                 {{i.category_name}}
-                                {{i.year}}
-                                {{i.rank}}
-                                <h5 class="card-title">{{i.book_name}}</h5>
+                                {{i.year}}년
+                                <h5 class="card-title" style="font-weight: bolder;">{{i.book_name}}</h5>
                                 <p class="card-text">{{i.explain}}</p>
                                 <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
                                     class="btn btn-primary">두류도서관 검색</a>
