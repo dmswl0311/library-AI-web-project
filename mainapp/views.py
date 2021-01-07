@@ -63,8 +63,7 @@ def search_result(request):
 
 def search(request): 
     search_name = request.GET['search'] 
-    lists = LibraryList.objects.filter(book_name__icontains=search_name) 
-
+    lists = LibraryList.objects.filter(book_name__icontains=search_name).values('book_name','url','explain').distinct()
     cnt=0
     for _ in lists:
         cnt+=1
