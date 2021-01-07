@@ -115,6 +115,19 @@
                 <input type="submit" value='제목검색' class="btn btn-primary">
             </form>
 
+            <div>
+                검색 조건:
+                {{gender}}
+                {%for r in age_list%}
+                {{r}}대
+                {%endfor%}
+                {%for r in category_list%}
+                {{r}}
+                {%endfor%}
+                {{year1}}년-{{year2}}년
+            </div>
+            <br>
+
             <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
                 <!--대분류1-->
                 <label for="0">여자</label><INPUT TYPE="radio" NAME="gender" ONCLICK="toggleShow(this)" value="F" id="0">
@@ -184,8 +197,8 @@
                 <BR>
                 <!--하위 분류2-->
                 <DIV ID="subCats1" CLASS="subCats">
-                    <label for="10">10대 이하</label><INPUT TYPE="checkbox" NAME="age" id='10' ONCLICK="toggleShow3(this)"
-                        value='10'>
+                    <label for="10">10대 이하</label><INPUT TYPE="checkbox" NAME="age[]" id='10'
+                        ONCLICK="toggleShow3(this)" value='10'>
                     <!--하위 분류-->
                     <div id="subM10" Class="subM">
                         <label for="1101">청소년교육</label><INPUT TYPE="checkbox" NAME="category_name[]" value="청소년교육"
@@ -194,7 +207,7 @@
                             id='1102'>
                         <label for="1103">과학</label><INPUT TYPE="checkbox" NAME="category_name[]" value="과학" id='1103'>
                     </div>
-                    <label for="20">20대</label><INPUT TYPE="checkbox" NAME="age" id='20' ONCLICK="toggleShow3(this)"
+                    <label for="20">20대</label><INPUT TYPE="checkbox" NAME="age[]" id='20' ONCLICK="toggleShow3(this)"
                         value='20'>
                     <div id="subM20" Class="subM">
                         <label for="1201">자기계발/창업</label><INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업"
@@ -204,7 +217,7 @@
                         <label for="1203">취미/생활/IT</label><INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT"
                             id='1203'>
                     </div>
-                    <label for="30">30대</label><INPUT TYPE="checkbox" NAME="age" id='30' ONCLICK="toggleShow3(this)"
+                    <label for="30">30대</label><INPUT TYPE="checkbox" NAME="age[]" id='30' ONCLICK="toggleShow3(this)"
                         value='30'>
                     <div id="subM30" Class="subM">
                         <label for="1301">자기계발/창업</label><INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업"
@@ -214,7 +227,7 @@
                         <label for="1303">취미/생활/IT</label><INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT"
                             id='1303'>
                     </div>
-                    <label for="40">40대</label><INPUT TYPE="checkbox" NAME="age" id='40' ONCLICK="toggleShow3(this)"
+                    <label for="40">40대</label><INPUT TYPE="checkbox" NAME="age[]" id='40' ONCLICK="toggleShow3(this)"
                         value='40'>
                     <div id="subM40" Class="subM">
                         <label for="1401">자기계발/창업</label><INPUT TYPE="checkbox" NAME="category_name[]" value="자기계발/창업"
@@ -224,7 +237,7 @@
                         <label for="1403">만화/오락</label><INPUT TYPE="checkbox" NAME="category_name[]" value="만화/오락"
                             id="1403">
                     </div>
-                    <label for="50">50대</label><INPUT TYPE="checkbox" NAME="age" id='50' ONCLICK="toggleShow3(this)"
+                    <label for="50">50대</label><INPUT TYPE="checkbox" NAME="age[]" id='50' ONCLICK="toggleShow3(this)"
                         value='50'>
                     <div id="subM50" Class="subM">
                         <label for="1501">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행"
@@ -234,8 +247,8 @@
                         <label for="1503">취미/생활/IT</label><INPUT TYPE="checkbox" NAME="category_name[]" value="취미/생활/IT"
                             id='1503'>
                     </div>
-                    <label for="60">60대 이상</label><INPUT TYPE="checkbox" NAME="age" id='60' ONCLICK="toggleShow3(this)"
-                        value='60'>
+                    <label for="60">60대 이상</label><INPUT TYPE="checkbox" NAME="age[]" id='60'
+                        ONCLICK="toggleShow3(this)" value='60'>
                     <div id="subM60" Class="subM">
                         <label for="1601">문학/여행</label><INPUT TYPE="checkbox" NAME="category_name[]" value="문학/여행"
                             id='1601'>

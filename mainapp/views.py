@@ -40,8 +40,12 @@ def index(request):
 def search_result(request):
     queryset=LibraryList.objects.all()
     queryset2=LibraryList.objects.all()
+    age=[10,20,30,40,50,60]
+    gender='F'
+    category_name=['과학']
+
     age = request.GET.getlist('age[]')
-    gender=request.GET['gender']
+    gender = request.GET['gender']
     category_name=request.GET.getlist('category_name[]')
     year1=request.GET['year1']
     year2=request.GET['year2']
@@ -58,10 +62,19 @@ def search_result(request):
     
     result=LibraryList.objects.all().filter(query&query2&Q(gender__icontains=gender))
     result=result.filter(year__range=(int(year1),int(year2))).order_by('rank').distinct()
-
+    
+    if gender=='F':
+        gender='여자'
+    elif gender=='M':
+        gender='남자'
     # result2=queryset.filter(Q(gender__icontains=gender)).distinct()
     context={
         'library_list':result,
+        'gender':gender,
+        'age_list':age,
+        'category_list':category_name,
+        'year1':year1,
+        'year2':year2,
     }
     return render(request,'search_result.html',context)
 
