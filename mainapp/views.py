@@ -76,5 +76,11 @@ def search(request):
     return render(request,"search.html",context)
 
 def test(request):
-
-    return render(request,'test.html')
+    queryset=LibraryList.objects.all()
+    query=Q()
+    
+    result=queryset.filter(Q(rank='1')).order_by('age','gender').distinct()
+    context={
+        'library_list_f':result,
+    }
+    return render(request,'test.html',context)

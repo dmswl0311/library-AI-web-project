@@ -1,9 +1,11 @@
-<html lang="en">
+{% load static %}
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>디자인test용</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -71,14 +73,14 @@
         </div>
     </fieldset>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home
@@ -112,6 +114,43 @@
             </form>
         </div>
     </nav>
+
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-link">Link</button>
+
+    <div class="container">
+        <div class="row">
+            {%for i in library_list_f%}
+            <div class="col-4">
+                <div class="card" style="height: 98%;">
+                    <div class="card-header">
+                        {{i.category_name}} {{i.age}}대
+                    </div>
+                    <center><img src="{{i.url}}" alt="책사진없음" width=' 230px' height='300px' /></center>
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.book_name}}</h5>
+                        <p class="card-text">{{i.explain}}..</p>
+                        <center>
+                            <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                                class="btn btn-warning btn-sm"
+                                style="margin-bottom: 5px; position: absolute; bottom: 0.3rem; right:6rem">두류도서관
+                                검색</a>
+                            <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                                class="btn btn-warning btn-sm"
+                                style="margin-bottom: 5px; position: absolute; bottom: 0.3rem; right:0.5rem">구글
+                                검색</a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
 </body>
 
 </html>
