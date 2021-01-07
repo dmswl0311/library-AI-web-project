@@ -1,5 +1,52 @@
 {% load static %}
 <html lang="ko">
+<style>
+    /* card */
+    .card {
+        min-height: 100%;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #444;
+        position: relative;
+        top: 0;
+        transition: all .1s ease-in;
+    }
+
+    .card:hover {
+        top: -8px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* font */
+    .nanumsquare {
+        font-family: 'NanumSquare', sans-serif !important;
+    }
+
+    @font-face {
+        font-family: 'HeirofLightBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .HeirofLightBold {
+        font-family: 'HeirofLightBold', sans-serif !important;
+    }
+
+    @font-face {
+        font-family: 'UhBeeSeulvely';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSeulvely.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .UhBeeSeulvely {
+        font-family: 'UhBeeSeulvely', sans-serif !important;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -21,40 +68,47 @@
 </head>
 
 <body>
-    <div class=container>
-        <center>
-            <h2 style="margin-top: 2rem;"><a href="{% url 'index' %}">제목 통합검색결과</a></h2>
-            <br>
-            <form action="{%url 'search'%}" method="get">
-                <input type="text" name='search'>
-                <input type="submit" value='제목검색' class="btn btn-primary">
-            </form>
-            <hr>
-        </center>
-        <div>
-            <br>
-            <div style="font-size: 1.2rem; margin-left: 7%;">
-                검색결과 {{count}}건
-                <br><br>
-                검색조건:
-                {{search_name}}
-            </div>
+    <center style="margin-top: 2rem;" class="UhBeeSeulvely">
+        <h4>대구시립 두류도서관</h4>
+        <h1><a href="{% url 'index' %}">제목 통합검색결과</a></h1>
+    </center>
 
-        </div>
+    <div class="middle-right-2"> <br><br>
         <center>
-            <div class="mt-5 mb-5" id="list" style="height:100vh; width:70vw;">
-                <div class=" row">
+            <form action="{%url 'search'%}" method="get">
+                <input type="text" name='search' style="width: 300px;">
+                <input type="submit" value='제목검색' id='name_serach' class="btn btn-warning">
+            </form>
+        </center>
+
+        <center>
+            <div class="container nanumsquare" style="margin-top: 3rem;">
+                <div style="font-size: 1.2rem;">검색결과 {{count}}건
+                    <br><br>
+                    검색조건:
+                    {{search_name}}
+
+                </div><br><br>
+                <div class="row">
                     {%for i in lists%}
-                    <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="card" style="width: 18rem;">
-                            <img src='{{i.url}}' width='200px' height='400px' class=" card-img-top" alt="...">
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">　
+                            </div>
+                            <center><img src="{{i.url}}" alt="책사진없음" width=' 230px' height='300px' /></center>
                             <div class="card-body">
-                                <h5 class="card-title">{{i.book_name}}</h5>
-                                <p class="card-text">{{i.explain}}</p>
-                                <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
-                                    class="btn btn-primary">두류도서관 검색</a>
-                                <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
-                                    class="btn btn-primary">구글 검색</a>
+                                <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
+                                <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
+                                <center>
+                                    <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                                        class="btn btn-warning btn-sm"
+                                        style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.8rem">두류도서관
+                                        검색</a>
+                                    <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                                        class="btn btn-warning btn-sm"
+                                        style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
+                                        검색</a>
+                                </center>
                             </div>
                         </div>
                     </div>
@@ -62,7 +116,7 @@
                 </div>
             </div>
         </center>
-    </div>
+
 </body>
 
 </html>
