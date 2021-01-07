@@ -74,3 +74,7 @@ def search(request):
         'count':cnt,
     } 
     return render(request,"search.html",context)
+
+def test(request):
+
+    return render(request,'test.html')

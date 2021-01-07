@@ -22,4 +22,5 @@ urlpatterns = [
     path('', mainapp.views.index,name='index'),
     path('search_result/',mainapp.views.search_result,name='search_result'),
     path('search/',mainapp.views.search,name='search'),
+    path('test/',mainapp.views.test,name='test'),
 ]
