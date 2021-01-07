@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-')
+SECRET_KEY ='%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -128,8 +128,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mainapp', 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-import dj_database_url
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
