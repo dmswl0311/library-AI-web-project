@@ -3,11 +3,16 @@ from django.db.models import Q
 from .models import LibraryList
 from django.http import HttpResponse,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator
 
 def index(request):
     queryset=LibraryList.objects.all()
+    paginator = Paginator(queryset,30) 
+    now_page = request.GET.get('page')
+    posts = paginator.get_page(now_page) 
+
     query=Q()
-    #여성, 10대이하~60대이상까지 인기카테고리 1,2,3위에 있는 첫번째 추천도서 리스트
+    # 여성, 10대이하~60대이상까지 인기카테고리 1,2,3위에 있는 첫번째 추천도서 리스트
     for i in range(1,7):
         query=query|Q(age__icontains=(i*10))
         for j in range(1,4):
@@ -59,3 +64,11 @@ def search_result(request):
         'library_list':result,
     }
     return render(request,'search_result.html',context)
+
+def search(request): 
+    search_name = request.GET['search'] 
+    lists = LibraryList.objects.filter(book_name__icontains=search_name) 
+    context={
+        "lists":lists
+    } 
+    return render(request,"search.html",context)

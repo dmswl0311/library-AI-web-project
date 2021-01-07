@@ -20,14 +20,14 @@
                 let values = $("#slider-range").slider("values")
                 $('#from').val(values[0]);
                 $('#to').val(values[1]);
-                $("#amount").val(`${values[0]} 년 - ${values[1]} 년`);
+                $("#amount").val(`       ${values[0]}년 - ${values[1]}년`);
             }
 
             $("#slider-range").slider({
                 range: true,
-                min: 1910,
+                min: 1974,
                 max: 2019,
-                values: [1950, 2010],
+                values: [1990, 2010],
                 slide: updateSliderFields
             });
 
@@ -110,6 +110,10 @@
     <br>
     <div class='container'>
         <center>
+            <form action="{%url 'search'%}" method="get">
+                <input type="text" name='search'>
+                <input type="submit" value='제목검색'>
+            </form>
 
             <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
                 <!--대분류1-->
@@ -243,71 +247,18 @@
                     </div>
                 </DIV>
                 <br>
-
                 <!-- <label for="amount">출판연도</label> -->
                 <div id="slider-range"></div>
                 <input type="text" id="amount" readonly aria-valuemin="" />
                 </p>
-
                 <input type="hidden" id="from" name="year1" />
                 <input type="hidden" id="to" name="year2" />
-                <!-- <div id="slider-range"></div>
-                <font size=5 id="slider_value_view">2009</font>년
-                2009년<input style="width:30%;" class="slider_range" name="year" type="range" value="2009" min="2009"
-                    max="2019"></input>2019년 -->
                 <input type="submit" value="검색" id="search_button">
             </FORM>
             <br>
             <hr>
         </center>
     </div>
-
-    <!-- 성,연령별, 출판연도별 -->
-    <!-- <div class="Container">
-        <form action="{%url 'search_result'%}" method="GET">
-            <label for="F" style="font-size: 28px;">여자</label><input type="checkbox" name='gender[]' id='F' value='F'
-                style="zoom:2.0;">
-            <label for="M" style="font-size: 28px;">남자</label><input type="checkbox" name='gender[]' id='M' value='M'
-                style="zoom:2.0;">
-            <br><br>
-            <label for="10" style="font-size: 28px;">10대이하</label><input type="checkbox" name='age[]' id='10' value='10'
-                style="zoom:2.0;">
-            <label for="20" style="font-size: 28px;">20대 </label><input type="checkbox" name='age[]' id='20' value='20'
-                style="zoom:2.0;">
-            <label for="30" style="font-size: 28px;">30대 </label><input type="checkbox" name='age[]' id='30' value='30'
-                style="zoom:2.0;">
-            <label for="40" style="font-size: 28px;">40대 </label><input type="checkbox" name='age[]' id='40' value='40'
-                style="zoom:2.0;">
-            <label for="50" style="font-size: 28px;">50대 </label><input type="checkbox" name='age[]' id='50' value='50'
-                style="zoom:2.0;">
-            <label for="60" style="font-size: 28px;">60대이상 </label><input type="checkbox" name='age[]' id='60'
-                value='60' style="zoom:2.0;">
-            <br>
-            <hr>
-            <font size=5 id="slider_value_view">2009</font>년
-            2009년<input style="width:80%;" class="slider_range" name="year" type="range" value="2009" min="2009"
-                max="2019"></input>2019년
-            <input type="submit" value="검색" id="search_button">
-        </form>
-    </div> -->
-
-    <script language="javascript">
-
-        function ShowSliderValue(sVal) {
-            var obValueView = document.getElementById("slider_value_view");
-            obValueView.innerHTML = sVal
-        }
-
-        var RangeSlider = function () {
-            var range = $('.slider_range');
-
-            range.on('input', function () {
-                ShowSliderValue(this.value);
-            });
-        };
-
-        RangeSlider();
-    </script>
 
     <div class=container>
         <center>
@@ -332,7 +283,6 @@
             </div>
         </center>
     </div>
-
 </body>
 
 </html>

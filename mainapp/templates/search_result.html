@@ -10,9 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            test();
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            let updateSliderFields = () => {
+                let values = $("#slider-range").slider("values")
+                $('#from').val(values[0]);
+                $('#to').val(values[1]);
+                $("#amount").val(`       ${values[0]}년 - ${values[1]}년`);
+            }
+
+            $("#slider-range").slider({
+                range: true,
+                min: 1974,
+                max: 2019,
+                values: [1990, 2010],
+                slide: updateSliderFields
+            });
+
+            updateSliderFields();
         });
     </script>
 
@@ -30,6 +49,12 @@
         .subM {
             display: none;
             margin-left: 20px;
+        }
+
+        #amount {
+            border: 0;
+            color: #f6931f;
+            font-weight: bold;
         }
     </STYLE>
     <SCRIPT>
@@ -85,6 +110,10 @@
     <br>
     <div class='container'>
         <center>
+            <form action="{%url 'search'%}" method="get">
+                <input type="text" name='search'>
+                <input type="submit" value='제목검색'>
+            </form>
 
             <FORM NAME="myForm" method="GET" action="{%url 'search_result'%}">
                 <!--대분류1-->
@@ -217,35 +246,19 @@
                     </div>
                 </DIV>
                 <br>
-                <font size=5 id="slider_value_view">2009</font>년
-                2009년<input style="width:30%;" class="slider_range" name="year" type="range" value="2009" min="2009"
-                    max="2019"></input>2019년
+                <!-- <label for="amount">출판연도</label> -->
+                <div id="slider-range"></div>
+                <input type="text" id="amount" readonly aria-valuemin="" />
+                </p>
+                <input type="hidden" id="from" name="year1" />
+                <input type="hidden" id="to" name="year2" />
                 <input type="submit" value="검색" id="search_button">
             </FORM>
             <br>
             <hr>
         </center>
     </div>
-
     </div>
-    <script language="javascript">
-
-        function ShowSliderValue(sVal) {
-            var obValueView = document.getElementById("slider_value_view");
-            obValueView.innerHTML = sVal
-        }
-
-        var RangeSlider = function () {
-            var range = $('.slider_range');
-
-            range.on('input', function () {
-                ShowSliderValue(this.value);
-            });
-        };
-
-        RangeSlider();
-    </script>
-
     <div class=container>
         <center>
             <div class="mt-5 mb-5" id="list" style="height:100vh; width:70vw;">
