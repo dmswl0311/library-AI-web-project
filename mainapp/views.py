@@ -64,7 +64,14 @@ def search_result(request):
 def search(request): 
     search_name = request.GET['search'] 
     lists = LibraryList.objects.filter(book_name__icontains=search_name) 
+
+    cnt=0
+    for _ in lists:
+        cnt+=1
+
     context={
-        "lists":lists
+        "lists":lists,
+        'search_name':search_name,
+        'count':cnt,
     } 
     return render(request,"search.html",context)
