@@ -25,7 +25,7 @@ SECRET_KEY = '%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,3 +128,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mainapp', 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
