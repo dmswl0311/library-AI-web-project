@@ -4,6 +4,7 @@ from .models import LibraryList
 from django.http import HttpResponse,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+from django.template import RequestContext
 
 def index(request):
     queryset=LibraryList.objects.all()
@@ -84,3 +85,4 @@ def test(request):
         'library_list_f':result,
     }
     return render(request,'test.html',context)
+  
