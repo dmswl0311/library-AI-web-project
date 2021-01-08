@@ -132,6 +132,12 @@
                     subM.style.display = 'none';
             }
         }
+        function alertt(form) {
+            if (!jQuery('input[name="gender"]:checked').val()) {
+                alert('성별을 선택해주세요');
+                return false;
+            }
+        }
     </SCRIPT>
     <style type="text/css">
         a {
@@ -311,7 +317,7 @@
                     <input type="hidden" id="from" name="year1" />
                     <input type="hidden" id="to" name="year2" /><br>
                     <input type="submit" value="성·연령별 검색" id="search_button" class="btn btn-warning"
-                        style="margin-bottom: 2rem;">
+                        style="margin-bottom: 2rem;" onclick="alertt()">
                     </FORM>
                 </div>
             </div>

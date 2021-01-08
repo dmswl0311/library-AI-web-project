@@ -74,7 +74,7 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <!-- Font -->
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -165,11 +165,10 @@
                     subM.style.display = 'none';
             }
         }
-        function radio_alert() {
-            if (document.getElementById(0).null) {
-                if (document.getElementById(1).null) {
-                    alert('성별을 선택해주세요!');
-                }
+        function alertt(form) {
+            if (!jQuery('input[name="gender"]:checked').val()) {
+                alert('성별을 선택해주세요');
+                return false;
             }
         }
     </SCRIPT>
@@ -185,7 +184,7 @@
     <center>
         <form action="{%url 'search'%}" method="get">
             <input type="text" name='search' style="width: 300px;">
-            <input type="submit" value='제목검색' id='name_serach' class="btn btn-warning">
+            <input type="submit" value='제목검색' id='name_serach' class="btn btn-warning" class="nanumsquare">
         </form>
     </center>
     <br>
@@ -343,7 +342,7 @@
                     <input type="hidden" id="from" name="year1" />
                     <input type="hidden" id="to" name="year2" /><br>
                     <input type="submit" value="성·연령별 검색" id="search_button" class="btn btn-warning"
-                        style="margin-bottom: 2rem;" onclick="radio_alert()">
+                        style="margin-bottom: 2rem;" onclick="alertt()">
                     </FORM>
                 </div>
             </div>
