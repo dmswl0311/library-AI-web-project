@@ -1,26 +1,7 @@
 {% load static %}
 <html lang="ko">
 <style>
-    /* card */
-    .card {
-        min-height: 100%;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: #444;
-        position: relative;
-        top: 0;
-        transition: all .1s ease-in;
-    }
-
-    .card:hover {
-        top: -8px;
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* font */
+    /* font*/
     .nanumsquare {
         font-family: 'NanumSquare', sans-serif !important;
     }
@@ -359,35 +340,40 @@
     <br><br><br>
     <!-- 책 리스트 -->
     <div class="container nanumsquare" style="margin-top: 15rem;">
-        <div class="row">
-            {%for i in library_list_f%}
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        {{i.gender}} {{i.category_name}} {{i.age}}대 추천도서 <div style="float: right;">{{i.year}}년</div>
+        <center>
+            <div class='mt-5 mb-5' id='list' style="height: 100vh; width:70vw;">
+                <div class="row">
+                    {%for i in library_list_f%}
+                    <div class="col-sm-12 col-md-4 mb-5">
+                        <div class="card" style="width: 19rem; height: 38rem;">
+                            <div class="card-header">
+                                {{i.gender}} {{i.category_name}} {{i.age}}대 추천도서 <div style="float: right;">{{i.year}}년
+                                </div>
+                            </div>
+                            <center><img src="{{i.url}}" alt="책사진없음" height='340px' class="card-img-top" />
+                            </center>
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
+                                <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
+                                <center>
+                                    <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
+                                        class="btn btn-warning btn-sm"
+                                        style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.4rem">두류도서관
+                                        검색</a>
+                                    <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
+                                        class="btn btn-warning btn-sm"
+                                        style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
+                                        검색</a>
+                                </center>
+                            </div>
+                        </div>
                     </div>
-                    <center><img src="{{i.url}}" alt="책사진없음" width=' 230px' height='300px' /></center>
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
-                        <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
-                        <center>
-                            <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
-                                class="btn btn-warning btn-sm"
-                                style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.4rem">두류도서관
-                                검색</a>
-                            <a href="https://www.google.com/search?q={{i.book_name}}&oq={{i.book_name}}5&aqs=chrome..69i57.1217j0j9&sourceid=chrome&ie=UTF-8"
-                                class="btn btn-warning btn-sm"
-                                style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
-                                검색</a>
-                        </center>
-                    </div>
+                    {%endfor%}
                 </div>
             </div>
-            {%endfor%}
-        </div>
+        </center>
     </div>
     <br><br>
-
 </body>
 
 

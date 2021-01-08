@@ -2,7 +2,7 @@
 <html lang="ko">
 <style>
     /* card */
-    .card {
+    /* .card {
         min-height: 100%;
         background: white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -13,12 +13,12 @@
         position: relative;
         top: 0;
         transition: all .1s ease-in;
-    }
+    } */
 
-    .card:hover {
+    /* .card:hover {
         top: -8px;
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    }
+    } */
 
     /* font */
     .nanumsquare {
@@ -51,6 +51,7 @@
     .middle-left {
         outline: 1px solid #9F9F9F;
         position: absolute;
+        display: flex;
         top: 9rem;
         width: 30%;
         height: 40%;
@@ -58,6 +59,7 @@
 
     .middle-right {
         position: absolute;
+        display: flex;
         top: 9rem;
         right: 10rem;
         width: 50rem;
@@ -76,13 +78,37 @@
         width: 48rem;
         height: 140px;
     }
+
+    @media (max_width:1080px) {
+        .card {
+            display: auto;
+            width: auto;
+        }
+
+        .middle-left {
+            width: auto;
+        }
+
+        .middle-right {
+            width: auto;
+        }
+
+        .middle-right-1 {
+            width: auto;
+        }
+
+        .middle-right-2 {
+            width: auto;
+        }
+    }
 </style>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
     <title>미대출 도서 추천</title>
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel=" shortcut icon" href="{% static 'img/favicon.ico' %}" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -365,7 +391,7 @@
         <div class="row">
             {%for i in library_list_f%}
             <div class="col-4">
-                <div class="card">
+                <div class="card" style="width:auto; height: auto;">
                     <div class="card-header">
                         {{i.gender}} {{i.category_name}} {{i.age}}대 추천도서 <div style="float: right;">{{i.year}}년</div>
                     </div>
