@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
 
-SECRET_KEY ='%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
+SECRET_KEY = '%d9721na+4ysg3=v484xfjd=y_i$o#)$-_&9smlo&&eqqif83-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'library_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
