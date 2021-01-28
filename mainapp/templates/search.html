@@ -70,13 +70,13 @@
     </center>
     <br>
     <!-- 제목통합검색 -->
-    <center>
+    <!-- <center>
         <form action="{%url 'search'%}" method="get">
             <input type="text" name='search' style="width: 300px;" placeholder="제목을 검색하세요!">
             <input type="submit" value='제목검색' id='name_serach' class="btn btn-warning nanumsquare">
         </form>
     </center>
-    <br>
+    <br> -->
     <hr>
     <!-- 책 리스트 -->
     <div class="container nanumsquare" style="margin-top: 5%;">
@@ -91,12 +91,12 @@
                 <div class="row">
                     {%for i in lists%}
                     <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="card" style="width: 19rem; height: 38rem;">
+                        <div class="card" style="width: 19rem; height: 35rem;">
                             <center><img src="{{i.url}}" alt="책사진없음" width=' 230px' height='300px' /></center>
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
                                 <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
-                                <center>
+                                <!-- <center>
                                     <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.4rem">두류도서관
@@ -105,7 +105,7 @@
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
                                         검색</a>
-                                </center>
+                                </center> -->
                             </div>
                         </div>
                     </div>

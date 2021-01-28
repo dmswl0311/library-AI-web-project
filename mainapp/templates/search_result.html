@@ -345,7 +345,7 @@
                 <div class="row">
                     {%for i in library_list%}
                     <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="card" style="width: 19rem; height: 38rem;">
+                        <div class="card" style="width: 19rem; height: 35rem;">
                             <div class="card-header">
                                 {{i.category_name}} {{i.age}}대 추천도서 <div style="float: right;">
                                     {{i.year}}년
@@ -355,7 +355,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
                                 <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
-                                <center>
+                                <!-- <center>
                                     <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.4rem">두류도서관
@@ -364,7 +364,7 @@
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
                                         검색</a>
-                                </center>
+                                </center> -->
                             </div>
                         </div>
                     </div>
