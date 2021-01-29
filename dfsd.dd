@@ -1,0 +1,432 @@
+[33mcommit 5eee99f2f7eaddaccfa8bb9cc9c731896d394e9c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 21:30:40 2021 +0900
+
+    test card 배치 수정
+
+[33mcommit 6ecccabc883e7f7f9baa67e96c11bb7c61effc89[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 18:38:10 2021 +0900
+
+    ogimg 수정
+
+[33mcommit 1c273c3e3fdbf1c25e0c28affe1429bb35f3c9bc[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 18:34:58 2021 +0900
+
+    test, index, search_result 디자인 수정
+
+[33mcommit 173199030b073b2092e5419bfe4bc533c2786e53[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 17:56:01 2021 +0900
+
+    index ogimg 변경
+
+[33mcommit c40fc4c20796fb76ade67aa8679e0ce320ae721b[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 17:54:01 2021 +0900
+
+    index ogimg 추가
+
+[33mcommit bef886c4ae5c98d8589c81bc7279272dc9958165[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 17:53:12 2021 +0900
+
+    index ogimg 추가
+
+[33mcommit f6bce4bf295c5de831092e49522e646465f4b544[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 17:48:42 2021 +0900
+
+    index에 og 추가
+
+[33mcommit 529b8f89d49fcbe2df794bcc776a41dea98dc978[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 15:58:05 2021 +0900
+
+    search_result 수정
+
+[33mcommit 075593ccdf70fa717ec2ec6d27a9afc1f7999b9e[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 15:55:23 2021 +0900
+
+    index 수정
+
+[33mcommit 78e498a1b5caf5d232c097cd36a4c7ce147b502b[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 15:50:22 2021 +0900
+
+    test 수정
+
+[33mcommit eb12d4df8ac1ce6f6bf21ea3362eeccd334cde1c[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 29 15:34:39 2021 +0900
+
+    test 변경
+
+[33mcommit 8def13eb80513b8af2fb332bad92acc9e664ecc8[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 28 17:50:26 2021 +0900
+
+    제목검색기능 삭제, 두류도서관 구글 검색버튼 삭제
+
+[33mcommit d0413ff6094766d0d4a1f81a7ce87cd5908df384[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Mon Jan 25 02:55:13 2021 +0900
+
+    test.html 버튼 수정
+
+[33mcommit d70988d2658a2ca3ae699aa99b456dd7087fee84[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 20:31:40 2021 +0900
+
+    error 페이지 수정
+
+[33mcommit 653d5ac43fc4627f195fc6181a329ba9428faa13[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 20:11:25 2021 +0900
+
+    alert 수정
+
+[33mcommit 4d66634c6a4fc4b64266babbb92f37380139f6cd[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 19:28:20 2021 +0900
+
+    alert 추가, debug false로 수정
+
+[33mcommit 33186e2827aa8d3f3c909061f3dd92b21fe302f8[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 18:52:12 2021 +0900
+
+    index 제목 변경
+
+[33mcommit d2d5c4c7858990a8b0b303e859e0bf704bc44c2e[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 18:49:55 2021 +0900
+
+    a태그 mouseover 효과 추과
+
+[33mcommit e70b9df2ff21f3de92e7942b9490cf5e07ede74c[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 18:28:19 2021 +0900
+
+    search 반응형 수정
+
+[33mcommit d4974407cfdbe66735974084237eda0ef0a1cf53[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 18:23:10 2021 +0900
+
+    index, search_result 반응형 수정
+
+[33mcommit 41f1a284943c76f25ac767de9678bb52be8582d4[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 18:12:11 2021 +0900
+
+    test.html 반응형 수정
+
+[33mcommit 8b3d60ccbc578e50afc429499549d7cc0e307728[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 17:09:08 2021 +0900
+
+    index.html 반응형 card 수정
+
+[33mcommit ffd52b33f27337cf4f4db6410f395d50aa442e50[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 17:05:21 2021 +0900
+
+    test.html 반응형 card 수정
+
+[33mcommit 8bffa77d51121d45f7ed555212da40614ae97055[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 03:21:39 2021 +0900
+
+    search.html 코드 수정
+
+[33mcommit cea04a185d66c855191974623cb20db2d25283a8[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 03:11:01 2021 +0900
+
+    search_result html 코드 수정
+
+[33mcommit 64cab6ca06ee81a675bfa0d666f0715dc1b3bc1f[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 02:53:28 2021 +0900
+
+    index html,css 디자인 수정
+
+[33mcommit aebbb0228f0a5543422837803fe021907c95ca01[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 02:38:24 2021 +0900
+
+    test 조건선택 디자인
+
+[33mcommit 38e42031d678ceefb757fd532c974a82f6e33682[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 01:00:27 2021 +0900
+
+    메인 카드디자인 수정
+
+[33mcommit f21c69a1023d21bca9b17a79b28d3e7b8ac514e5[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 00:56:54 2021 +0900
+
+    test.html card 정렬
+
+[33mcommit e9bd2343928467aae27813b4d2925269990551bd[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Fri Jan 8 00:17:32 2021 +0900
+
+    디자인 test html 생성
+
+[33mcommit 91702580aa4ba5dee70dc24634e9d724d72b52a6[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 22:04:27 2021 +0900
+
+    search_result margin-left변경
+
+[33mcommit 0d2be3799222b958ad754ed9cb4805414f84cdc6[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 21:44:32 2021 +0900
+
+    allowed_hosts pythonanywhere 수정
+
+[33mcommit 8b7bf6b9e14a3b0d223321dbac9dfbdb872f5566[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 21:42:16 2021 +0900
+
+    allowed_hosts 수정
+
+[33mcommit fc4b137b6e478f5de67673e04c4d29d694da1c31[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 21:38:55 2021 +0900
+
+    allowed_hosts, whitenoise 수정
+
+[33mcommit 43fef79712189cf3c4205ea1499f1ea154b95c1c[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 21:08:42 2021 +0900
+
+    .gitignore 추가
+
+[33mcommit 7be3497f0d72e82d1dde7dd5ebdf21536f771b11[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 21:01:45 2021 +0900
+
+    heroku배포필요한파일삭제
+
+[33mcommit 7d870f404f8ed2f7df1b9817dacff2b8916c0c29[m[33m ([m[1;31mheroku/master[m[33m)[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 20:47:15 2021 +0900
+
+    import os 위치 변경
+
+[33mcommit 8b703f6c4d3cd5dd1a86643aade4a22abb6cc2fc[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 20:46:02 2021 +0900
+
+    settings.py수정
+
+[33mcommit e94104206a68684ab3ea3bef315602f9781246d2[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 17:18:45 2021 +0900
+
+    heroku 시작
+
+[33mcommit 9245ac7488b087c3ffde2333fbff951df61fcc73[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 17:11:16 2021 +0900
+
+    search함수 책제목기준 중복제거 기능 추가
+
+[33mcommit 37ba3bfa3efec5e4354b5df6bf19a64e715f2b14[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 17:04:08 2021 +0900
+
+    html 수정
+
+[33mcommit 6e19c5c13dff27ca1fdee64b17acf0bf9527215a[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 16:57:13 2021 +0900
+
+    파비콘 적용
+
+[33mcommit 1e0b034d55d3084310ea11cf23eb8d967c90d84e[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 16:49:39 2021 +0900
+
+    static 파일 추가
+
+[33mcommit e1d624cf3b7fdff3348ea533df74b4a7094936e8[m
+Author: 조은지 <48826021+dmswl0311@users.noreply.github.com>
+Date:   Thu Jan 7 16:35:20 2021 +0900
+
+    Update README.md
+
+[33mcommit fbadb8ff16823ef899f6e4f89de5788f58fafebc[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 16:28:28 2021 +0900
+
+    메인함수 쿼리 필터 수정, 검색결과 도서건수추가
+
+[33mcommit e64adee42e9ed18cb73cf70a7d7fb05ab8932b95[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 15:55:52 2021 +0900
+
+    검색조건 default값 수정
+
+[33mcommit e795e6507754f9152b8e69afe91a9d52e914d8f0[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 15:16:43 2021 +0900
+
+    검색버튼 디자인 변경
+
+[33mcommit 95f5e917582d2eae8acb6911a5a7842e68a9c03b[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 15:12:57 2021 +0900
+
+    제목검색 기능 추가
+
+[33mcommit cf7944bf5e8e5c38ce7fb40e09c927dbf2768a94[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Thu Jan 7 00:56:34 2021 +0900
+
+    jquery slider 추가
+
+[33mcommit 20855cbceb0fd5afba9f8e913e86fb213af7da14[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 23:53:31 2021 +0900
+
+    html 코드 수정
+
+[33mcommit b81e24a5de160509d331e057559721dcdf0e60dc[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 23:19:39 2021 +0900
+
+    search 기능 수정
+
+[33mcommit 38e044c6112625d0860bace5282f51ed3c831250[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 20:15:01 2021 +0900
+
+    데이터 수정
+
+[33mcommit 649c67d8ebe8b289ab70c6993a630573f773829e[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 19:50:05 2021 +0900
+
+    데이터 추가
+
+[33mcommit b7ffa77d2dbed2901545f998b0d04b1a19493c96[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 19:38:01 2021 +0900
+
+    age return 값 수정
+
+[33mcommit 96df7be7253e70dcf27192a72e869bda45f8d841[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Wed Jan 6 18:27:52 2021 +0900
+
+    다중체크박스 생성, age return값 수정 필요
+
+[33mcommit 2ade9178a6b7a1e257fec89869442ce7823e5725[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 23:58:42 2021 +0900
+
+    index 함수 model 중복제거
+
+[33mcommit c784cc676cd68ca5bbb1648ac09c97131805f65c[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 23:34:04 2021 +0900
+
+    index.html card 정렬
+
+[33mcommit 4df2859d4128f45a22da1eac2bb953d5d034fa82[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 20:11:52 2021 +0900
+
+    대출연도 범위 수정완료
+
+[33mcommit b5d2c769e9d46368e9359ef96dd769ab50ce993c[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 19:52:32 2021 +0900
+
+    index 수정, views.py 수정해야함
+
+[33mcommit d95d28139e4daca65c6da76be36672bc286aa1dd[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 18:39:28 2021 +0900
+
+    html 디자인 수정
+
+[33mcommit 801efd1b53bc11abb26124e110be7a256f5a34b8[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 17:47:53 2021 +0900
+
+    체크박스 다중선택 함수 수정-가능
+
+[33mcommit d6009cef2512503352f7304334213f0e13dfa23d[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 17:14:30 2021 +0900
+
+    출판연도 슬라이드 추가
+
+[33mcommit 18eb1b37dae236f22aff965d954ef0289169fbc3[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 14:33:27 2021 +0900
+
+    html 형식 수정
+
+[33mcommit 57eed33992cd6898f2be89f63151aea5e8e2d6b7[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:21:56 2021 +0900
+
+    index 페이지 수정, index 함수 수정(기능 추가)
+
+[33mcommit e077a29fa5fbbd0d77ce7d4be6caca170a6d8a0b[m
+Merge: 399fe66 84de638
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:19:25 2021 +0900
+
+    Merge branch 'master' of https://github.com/dmswl0311/library_project
+
+[33mcommit 399fe661e18f6f57757113c81146d6a3a4d56aef[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:18:56 2021 +0900
+
+    search_result 페이지 추가, 서치 함수 추가
+
+[33mcommit 84de638e4cf7dfffadbc16c50ba0e051cfeadb67[m
+Author: 조은지 <48826021+dmswl0311@users.noreply.github.com>
+Date:   Tue Jan 5 02:11:25 2021 +0900
+
+    Create README.md
+
+[33mcommit 219e58dfe1d0a6b244f54eb164e4fbd4953f968d[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:10:36 2021 +0900
+
+    admin에 import,export 기능 추가
+
+[33mcommit 94910705c1002bf86713a2fda37a018bd599aaac[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:08:31 2021 +0900
+
+    admin 추가
+
+[33mcommit dee1c43d3e87a10a3b66983b18efa468a05062b1[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:07:12 2021 +0900
+
+    LibraryList 모델 추가
+
+[33mcommit e8be5bc98cd849874d205a4e69a2cf23df3065bd[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 02:05:23 2021 +0900
+
+    index 페이지 추가
+
+[33mcommit 02480d1a7ec95527627424127feb121b2203cb3f[m
+Author: dmswl0311 <dmswl_0311@naver.com>
+Date:   Tue Jan 5 01:57:24 2021 +0900
+
+    first commit
