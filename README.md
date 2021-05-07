@@ -2,6 +2,7 @@
 #### - 미대출 도서 추천 시스템 구현
 - :computer: python, R-studio, tensorflow, django 
 - :books: DIP Student Intern project
+- http://choeunji.pythonanywhere.com/
 ---
 - pip install django
 - pip install django-import-export
