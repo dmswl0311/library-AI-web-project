@@ -458,7 +458,41 @@
         </center>
     </div>
     <br>
-    <!-- 책 리스트 -->
+    <!--<style>
+        ul, dl,dt,dd {margin:0;padding:0;list-style:none}
+        .book-wrap {}
+        .book-box > ul{margin:0 auto; width:100%; overflow: hidden; text-align: center;}
+        .book-box > ul > li {float:left; width:31%; border: 1px solid #ccc; min-height:600px; margin:5px 5px 5px;}
+        .book-box > ul > li > div{padding:10px;}
+        .book-box ul li:nth-child(3n+1){clear:both;}
+        .book-box > ul li .thum {background: #fff; min-height:40%;}
+        .book-box > ul li .thum img{width:60%; height:45%; overflow:hidden; margin-bottom:15px;}
+        .book-box > ul li .subject {font-size:15px; font-weight: bold;}
+    </style>
+    <div class="book-wrap nanumsquare">
+        <div class="book-box">
+            <ul>
+                {%for i in library_list_f%}
+                    <li>
+                        <div class="book-header">
+                            <span style="text-align: left;">{{i.gender}} {{i.category_name}} {{i.age}}대 추천도서 <span style="float: right;">
+                                {{i.year}}년</span>
+                        </div>
+                        <div class="thum">
+                            <img src="{{i.url}}" alt="">
+                        </div>
+                        <div class="subject">
+                            {{i.book_name}}
+                        </div>
+                        <div class="book-contents">
+                            {{i.explain}}..
+                        </div>
+                    </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+    !-->
     <div class="container nanumsquare" style="margin-top: 5%;">
         <center>
             <div class='mt-5 mb-5' id='list' style="height: 100vh; width:70vw;">
