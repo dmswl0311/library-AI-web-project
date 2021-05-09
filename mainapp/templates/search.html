@@ -78,7 +78,49 @@
     </center>
     <br> -->
     <hr>
-    <!-- 책 리스트 -->
+    <style>
+        ul, dl,dt,dd {margin:0;padding:0;list-style:none}
+        .book-wrap {max-width:1200px; margin: 0 auto;}
+        .book-box > ul{width:100%; overflow: hidden; text-align: center;}
+        .book-box > ul > li {float:left; width:30%; border: 1px solid #ccc; border-radius:5px; height:600px; margin:15px 15px 15px;}
+        .book-box > ul > li > div{padding:10px;}
+        .book-box ul li:nth-child(3n+1){clear:both;}
+        .book-box > ul li .book-header {background-color: rgba(0,0,0,.03);}
+        .book-box > ul li .thum {background: #fff; min-height:40%;}
+        .book-box > ul li .thum img{width:60%; height:45%; overflow:hidden; margin-bottom:15px;}
+        .book-box > ul li .subject {font-size:17px; font-weight: bold;}
+    </style>
+    
+    <div class="book-wrap nanumsquare">
+        <div style="font-size: 1.2rem; margin-top: -2rem;">
+            <span>
+            검색결과 {{count}}건
+            <br><br>
+            검색어:
+            {{search_name}}
+            </span>
+        </div><br><br>
+        <br>
+        <div class="book-box">
+            <ul>
+                {%for i in lists%}
+                    <li>
+                        <div class="thum">
+                            <img src="{{i.url}}" alt="">
+                        </div>
+                        <div class="subject">
+                            {{i.book_name}}
+                        </div>
+                        <div class="book-contents">
+                            {{i.explain}}..
+                        </div>
+                    </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+
+    <!-- 
     <div class="container nanumsquare" style="margin-top: 5%;">
         <center>
             <div class='mt-5 mb-5' id='list' style="height: 100vh; width:70vw;">
@@ -96,7 +138,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: bold;">{{i.book_name}}</h5>
                                 <p class="card-text" style="font-size: 0.8rem;">{{i.explain}}..</p>
-                                <!-- <center>
+                                <center>
                                     <a href="https://library.daegu.go.kr/duryu/intro/search/index.do?menu_idx=13&booktype=BOOKANDNONBOOK&title={{i.book_name}}#search_result"
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:5.4rem">두류도서관
@@ -105,7 +147,7 @@
                                         class="btn btn-warning btn-sm"
                                         style="margin-bottom: 5px; position: absolute; bottom: -0.1rem; right:0.5rem">구글
                                         검색</a>
-                                </center> -->
+                                </center> 
                             </div>
                         </div>
                     </div>
@@ -113,7 +155,7 @@
                 </div>
             </div>
         </center>
-    </div>
+    </div>-->
 
 </body>
 
