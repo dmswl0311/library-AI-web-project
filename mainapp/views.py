@@ -85,4 +85,3 @@ def test(request):
         'library_list_f':result,
     }
     return render(request,'test.html',context)
-  
