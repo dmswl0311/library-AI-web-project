@@ -29,7 +29,7 @@ Python, R, Django, HTML, CSS, Java Script
 ### 분석 프로세스
 ![image](https://user-images.githubusercontent.com/48826021/148410482-2d0e0778-bc82-4132-a8f3-042f8c288721.png)
 
-### 프로젝트 결과
+### 프로젝트 결과 ([http://choeunji.pythonanywhere.com/](http://choeunji.pythonanywhere.com/))
 ![image](https://user-images.githubusercontent.com/48826021/148410534-027cf129-34e4-469c-9eb1-3667f9faa05a.png)
 ![image](https://user-images.githubusercontent.com/48826021/148410559-03956605-092a-4ba8-bab5-5aac367cffcb.png)
 
