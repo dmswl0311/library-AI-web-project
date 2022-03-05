@@ -1,9 +1,7 @@
 ## 데이터 분석, 웹 프로젝트 - 미대출 도서 추천 시스템
 기간 : 2020.11.02 - 2020.11.16 / 2021.01.08 - 2021.01.13
-
-깃허브 : https://github.com/dmswl0311/library-AI-web-project
-
-웹 페이지 : [http://choeunji.pythonanywhere.com/](http://choeunji.pythonanywhere.com/)
+<br>
+[프로젝트 결과](http://choeunji.pythonanywhere.com/)
 
 ### **서비스 소개 및 주제**
 
@@ -17,7 +15,7 @@ Open API를 이용한 데이터 수집, 파이썬을 이용한 데이터 전처�
 
 ### **사용 기술 스택**
 
-Python, R, Django, HTML, CSS, Java Script
+Python, Django, HTML, CSS, Java Script
 
 ### **사용 API & 데이터**
 
@@ -27,13 +25,14 @@ Python, R, Django, HTML, CSS, Java Script
 - 도서관 정보나루 도서 상세 정보 Open API
 
 ### 분석 프로세스
+콘텐츠 기반 필터링을 이용한 추천 알고리즘 구현
 ![image](https://user-images.githubusercontent.com/48826021/148410482-2d0e0778-bc82-4132-a8f3-042f8c288721.png)
 
-### 프로젝트 결과 ([http://choeunji.pythonanywhere.com/](http://choeunji.pythonanywhere.com/))
+### 프로젝트 결과 
 ![image](https://user-images.githubusercontent.com/48826021/148410534-027cf129-34e4-469c-9eb1-3667f9faa05a.png)
 ![image](https://user-images.githubusercontent.com/48826021/148410559-03956605-092a-4ba8-bab5-5aac367cffcb.png)
 
-### 성과
+### 🥇 성과
 
 도서관 빅데이터 우수 활용사례 및 아이디어 공모전 데이터 분석부문 최우수상 수상
 
